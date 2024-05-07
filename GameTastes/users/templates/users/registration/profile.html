@@ -1,0 +1,14 @@
+{% extends 'authentication/base_auth.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'authentication/css/author.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">С возвращением!</h1>
+
+
+{% endblock %}

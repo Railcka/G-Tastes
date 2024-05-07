@@ -1,0 +1,38 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'authentication/css/author.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>{{ form.errors.error }}</p>
+    {% endif %}
+
+    <form action="{% url 'login_view' %}" method="post" class="form-login">
+        {% csrf_token %}
+        <h1 class="title">С возвращением!</h1>
+
+        <p class="text">Введите свои учетные данные для доступа к вашей учетной записи</p>
+
+        <div class="div-auth">
+            {{ form.as_table }}
+        </div>
+
+        <div class="div-forgot-pass">
+            <a class="forgot-pass" href="{% url 'password_reset' %}">Забыли пароль?</a>
+        </div>
+
+        <button type="submit"  class="btn-auth">Авторизация</button>
+    </form>
+
+    <div class="register">
+        <p class="register-text">У вас нет учетной записи?</p>
+        <a class="register-btn" href="{% url 'register' %}">Зарегистрироваться</a>
+    </div>
+
+{% endblock %}

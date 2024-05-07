@@ -1,0 +1,48 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'authentication/css/author.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          $('#id_email').on('change', function() {
+
+            $('#id_username').val($(this).val());
+          });
+        });
+    </script>
+
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Регистрация</h1>
+
+
+    <form action="{% url 'register' %}" method="post" class="form-login">
+
+        {% csrf_token %}
+        <div class="div-auth">
+            {{ form.as_table }}
+        </div>
+
+        {{ form.errors }}
+
+        <button type="submit" class="btn-auth">Регистрация</button>
+
+
+    </form>
+
+
+    <div class="register">
+        <p class="register-text">Уже есть учетная запись?</p>
+        <a class="register-btn" href="{% url 'login' %}">Войти</a>
+    </div>
+
+
+{% endblock %}
