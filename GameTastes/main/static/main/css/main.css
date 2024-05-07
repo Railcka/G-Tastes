@@ -1,0 +1,57 @@
+.main-div{
+    background-color: #E0D7CE;
+}
+
+.nav-color{
+    background: #6E748B;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.color-yellow{
+    color: #E5961F;
+}
+
+.color-white{
+    color: white;
+}
+
+.main-logo{
+    width: 90px;
+    height: 90px;
+}
+
+.navbar-header{
+    display: flex;
+    align-items: center;
+}
+
+.main-2-div{
+    display: flex;
+    align-items: center;
+}
+
+.text-g{
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.text-g2{
+    font-size: 40px;
+    color: #35AFBF;
+}
+
+.text-g3{
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.img-ramen{
+    width: 540px;
+    height: 678px;
+}

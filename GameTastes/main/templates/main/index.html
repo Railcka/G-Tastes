@@ -1,0 +1,41 @@
+{% extends 'main/base_layout.html' %}
+{% load static %}
+
+
+{% block title %} {{ title }} {% endblock %}
+
+
+{% block head %}
+
+{% endblock head %}
+
+
+{% block content %}
+
+<section class="feature-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="main-2-div">
+                <div class="col-sm-7 col-xs-12">
+                    <h2 class="text-g">G-TASTES</h2>
+
+                    <p class="text-g text-g2">это вкусные рецепты из мира видеоигр</p>
+
+                    <p class="text-g text-g3">Мы поможем вам приготовить то, что так нравится вашим героям из видеоигр</p>
+                </div>
+            
+                <img class="img-ramen" src="{% static 'main/img/cartoon-ramen-no-background-free-png.png' %}">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- featuer-section end -->
+
+{% endblock content %}
+
+
+{% block jscode %}
+
+{% endblock jscode %}
