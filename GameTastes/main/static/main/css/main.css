@@ -55,3 +55,79 @@
     width: 540px;
     height: 678px;
 }
+
+.text-p{
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 125%;
+}
+
+.text-logo{
+    font-size: 42px;
+    color: #35AFBF;
+    font-weight: 700;
+}
+
+.img-gril{
+    width: 50%;
+    border-radius: 50px;
+}
+
+.cat-head{
+    font-size: 40px;
+    font-weight: 700;
+    color: #3A4253;
+}
+
+.main-cat-rec{
+    width: 200px;
+    /* Colors/Gray/Gray 2 */
+    border: 1px solid rgb(244, 244, 246);
+    border-radius: 30px;
+    box-shadow: 6px 0px 40px 0px rgba(229, 229, 229, 0.7);
+    /* Pure White */
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.card-title-text{
+    font-size: 16px;
+    font-weight: 700;
+    color: #6E748B;
+}
+
+.btn-rec{
+    color: #fff;
+    background-color: #6E748B;
+    border-color: transparent;
+}
+
+.rec-info{
+    display: flex;
+    justify-content: space-around;
+}
+
+.rec-info2{
+    display: flex;
+}
+
+.rec-cat{
+    background-color: #F7EDD0;
+    padding: 5px;
+    color: #DAA31A;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.rec-heart{
+    position: absolute;
+    left: 175px;
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
