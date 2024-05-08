@@ -1,0 +1,47 @@
+{% extends 'main/base_layout.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/account.css' %}">
+    <meta name="description" content="Личный кабинет">
+{% endblock %}
+
+{% block content %}
+
+<section class="section-title">
+    <h2 class="title">Личный кабинет</h2>
+</section>
+
+<section class="section-account">
+    <ul class="account-info">
+        <li>
+            <h3 class="title-name">Логин:</h3>
+            <h4 class="title-info">{{ user.username }}</h4>
+        </li>
+        <hr class="info-line">
+        <li>
+            <h3 class="title-name">E-mail:</h3>
+            <h4 class="title-info">{{ user.email }}</h4>
+        </li>
+        <hr class="info-line">
+        <li>
+            <h3 class="title-name">Дата и время регистрации:</h3>
+            <h4 class="title-info">{{ user.date_joined }}</h4>
+        </li>
+        <hr class="info-line">
+        <li>
+            <h3 class="title-name">Тарифный план:</h3>
+            <h4 class="title-info">Старт</h4>
+        </li>
+    </ul>
+</section>
+
+<section class="section-control">
+    <button class="standard-button refactor-button" onclick="location.href='{% url 'accountEdit' %}'">Изменить данные</button>
+    <button class="standard-button add-button" onclick="location.href='{% url 'password_change' %}'">Изменить пароль</button>
+    <button class="standard-button delete-button">Удалить аккаунт</i></button>
+</section>
+
+{% endblock %}

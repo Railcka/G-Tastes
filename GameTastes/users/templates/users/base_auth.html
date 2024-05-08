@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/base_auth.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/author.css' %}">
+
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body class="main">
+
+
+    <div class="container-auth">
+
+        <img class="main-logo" src="{% static 'main/img/logo1.png' %}">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+    <div class="right-div">
+        <img class="img-ramen" src="{% static 'users/img/image11.png' %}">
+        <h3 class="right-title">Выбирайте рецепты игр</h3>
+        <p class="right-text">G-Teastes - это сервис рецептов еды, специализирующийся на блюдах из игр. У нас представлено более 2 тысяч рецептов, включая азиатские, китайские, итальянские и многие другие кулинарные направления, вдохновленные игровой культурой.
+Наш сервис не только предоставляет широкий выбор интересных блюд, но и помогает управлять заказами и финансами, делая процесс заказа еды удобным и простым. Начните своё кулинарное путешествие с G-Teastes прямо сейчас!</p>
+    </div>
+
+
+</body>
+</html>

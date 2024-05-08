@@ -1,0 +1,145 @@
+html, body{
+    font-family: Inter;
+    height: 100%;
+}
+
+.header-mail{
+    width: 600px;
+    padding: 10px;
+    background: #E0E0E0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-img{
+    width: 80px;
+    height: 80px;
+}
+
+.logo-title{
+    font-family: Roboto;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.logo-span{
+    font-family: Roboto;
+    color: #4CAF4F;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.main-mail{
+    width: 600px;
+}
+
+
+.footer-mail{
+    width: 600px;
+}
+
+.div-thanks{
+    padding: 10px;
+    padding-top: 0;
+}
+
+.footer-text1{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.footer-text2{
+    color: black;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.footer-line{
+    border: none;
+    border-top: 1px solid #999999;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.brand-text{
+    font-family: Roboto;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.brand-span{
+    font-family: Roboto;
+    color: #4CAF4F;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.div-license{
+    text-align: end;
+    list-style: none;
+}
+
+.license-ul{
+    display: inline-flex;
+}
+
+.license-ul li a{
+    text-align: center;
+    color: black;
+    line-height: 24px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 16px;
+}
+
+.div-footer{
+    padding: 10px;
+    background: #F5F7FA;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.standard-button{
+    background-color: black;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.add-button{
+    background-color: #4CAF4F;
+}
+
+.add-button:hover{
+    background-color: #4a8e5f;
+}
+
+.refactor-button{
+    background-color: #4287f5;
+}
+
+.refactor-button:hover{
+    background-color: #297ce0;
+}

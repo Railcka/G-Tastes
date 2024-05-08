@@ -6,5 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('account', views.account, name='account'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

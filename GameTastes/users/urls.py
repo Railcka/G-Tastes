@@ -4,11 +4,13 @@ from django.urls import path, include
 import django.contrib.auth.urls
 
 from . import views
-from .views import *
+from .views import RegisterView
 
 urlpatterns = [
     path('', include("django.contrib.auth.urls")),
-    path('login/', views.login_view, name='login_view'),
+    path('login/', views.login, name='login'),
+    path('profile', views.profile, name='profile'),
+    path('register', RegisterView.as_view(), name='register'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
