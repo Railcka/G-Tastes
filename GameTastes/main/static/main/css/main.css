@@ -131,3 +131,64 @@
 .margin-bottom-30{
     margin-bottom: 30px;
 }
+
+.text-black{
+    color: black;
+}
+
+.single-recipe-detail {
+    margin-bottom: 30px;
+
+}
+
+.recipe-detail{
+    display: flex;
+
+}
+
+.rating-box{
+
+}
+
+.rating-figure {
+    margin-left: 10px;
+    padding-top: 3px;
+}
+
+.recipe-detail-img{
+    width: 600px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.recipe-specs{
+    margin-bottom: 0;
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.recipe-specs-box{
+    padding: 5px;
+    width: 30%;
+    background: #E5961F;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    line-height: 125%;
+}
+
+.specs-detail{
+    margin: 0;
+
+}
+
+.specs-title{
+    margin: 0;
+    line-height: 100%;
+}

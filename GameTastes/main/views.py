@@ -8,6 +8,15 @@ def index(request):
     return render(request, 'main/index.html', {'title': 'Главная страница'})
 
 
+def all_recipes(request):
+    return render(request, 'main/all_recipes.html', {'title': 'Рецепты'})
+
+
+def recipe(request):
+    return render(request, 'main/recipe.html', {'title': 'Рецепт'})
+
+
 @login_required(None, 'next', '/users/login')
 def account(request):
     return render(request, 'main/account.html', {'title': 'Личный кабинет'})
+
