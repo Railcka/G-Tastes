@@ -166,21 +166,24 @@
     width: 60%;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 10px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .recipe-specs-box{
-    padding: 5px;
+    margin-bottom: 20px;
     width: 30%;
     background: #E5961F;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
     line-height: 125%;
+    height: 30%;
+    justify-content: center;
 }
 
 .specs-detail{
