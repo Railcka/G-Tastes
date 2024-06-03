@@ -10,38 +10,29 @@
 
 {% block content %}
 
-<section class="section-title">
-    <h2 class="title">Личный кабинет</h2>
-</section>
+<div class="section-account-div container">
+    <section class="section-account margin-top-20 margin-bottom-30">
 
-<section class="section-account">
-    <ul class="account-info">
-        <li>
-            <h3 class="title-name">Логин:</h3>
-            <h4 class="title-info">{{ user.username }}</h4>
-        </li>
-        <hr class="info-line">
-        <li>
-            <h3 class="title-name">E-mail:</h3>
-            <h4 class="title-info">{{ user.email }}</h4>
-        </li>
-        <hr class="info-line">
-        <li>
-            <h3 class="title-name">Дата и время регистрации:</h3>
-            <h4 class="title-info">{{ user.date_joined }}</h4>
-        </li>
-        <hr class="info-line">
-        <li>
-            <h3 class="title-name">Тарифный план:</h3>
-            <h4 class="title-info">Старт</h4>
-        </li>
-    </ul>
-</section>
+        <div class="div-left">
+                <a href="{% url 'account' %}"><h3 class="color-white">Профиль</h3></a>
+                <a href=""><h3 class="color-white">Избранное</h3></a>
+        </div>
 
-<section class="section-control">
-    <button class="standard-button refactor-button" onclick="location.href='{% url 'accountEdit' %}'">Изменить данные</button>
-    <button class="standard-button add-button" onclick="location.href='{% url 'password_change' %}'">Изменить пароль</button>
-    <button class="standard-button delete-button">Удалить аккаунт</i></button>
-</section>
+        <div class="div-right padding-10">
+            <h2 class="color-text">Профиль</h2>
+            <div class="div-right-info">
+                 <div>
+                     <h3 class="account-text-title color-text">Имя</h3>
+                     <span class="account-text-info">Rail</span>
+                 </div>
+                 <div>
+                     <h3 class="account-text-title color-text">E-mail</h3>
+                     <span class="account-text-info">rail@mail.ru</span>
+                 </div>
+            </div>
+        </div>
+
+    </section>
+</div>
 
 {% endblock %}
