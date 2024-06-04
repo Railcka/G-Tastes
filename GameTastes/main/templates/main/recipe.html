@@ -19,15 +19,18 @@
                 <h2 class="text-black">Жаркое из ягненка с картофелем и горошком</h2>
             </div>
             <div class="recipe-detail">
-                <img class="recipe-detail-img" src="{% static 'main/img/image17.jpeg' %}">
-
-                <div class="rating-stars">
-                    <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
-                    <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
-                    <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
-                    <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
-                    <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                <div class="recipe-detail-images">
+                    <img class="recipe-detail-img" src="{% static 'main/img/image17.jpeg' %}">
+                    <div class="rating-stars">
+                        <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                        <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                        <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                        <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                        <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
+                    </div>
                 </div>
+
+
 
                 <div class="recipe-specs">
                     <div class="recipe-specs-box">
@@ -88,7 +91,7 @@
         </div>
 
         <div class="div-ingredients">
-            <h2 class="color-text">Ингредиенты</h2>
+            <h2 class="color-text weight-text">Ингредиенты</h2>
             <div class="div-ingr">
                 <div class="ingr">
                     <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
@@ -112,7 +115,7 @@
         </div>
 
         <div class="div-steps-recipe">
-            <h2 class="color-text">Пошаговый рецепт</h2>
+            <h2 class="color-text weight-text">Пошаговый рецепт</h2>
             <div class="div-step">
                 <h3 class="color-black">1.</h3>
                 <p class="step-text color-black">Очистите мясо ягненка от жилок и лишнего жира, обмажьте специей чимичурри, солью и перцем, дайте постоять 2,5 часа.</p>
@@ -122,8 +125,102 @@
                 <p class="step-text color-black">Быстро обжарьте мясо до золотистой корочки с каждой стороны. Положите в кастрюлю, полностью залейте маслом и поставьте в духовку, разогретую до 120 градусов, на 2 часа — так оно получится мягким и сочным.</p>
             </div>
             <div class="div-step">
-                <h3 class="color-black">1.</h3>
+                <h3 class="color-black">3.</h3>
                 <p class="step-text color-black">Картофель положите в фольгу, добавьте растительное масло, соль, перец и мелко порубленный чеснок. Заверните и поставьте в разогретую до 180 градусов духовку на 45 минут.</p>
+            </div>
+        </div>
+
+        <hr>
+        <div class="div-star-fav">
+            <div class="your-star">
+                <h3 class="color-text star-text">Ваша оценка:
+                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
+                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
+                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
+                </h3>
+            </div>
+            <div class="your-fav">
+                <h3 class="color-text fav-text">Избранное</h3>
+                <img class="fav-heart" src="{% static 'main/img/heart.png' %}">
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <h2 class="color-text weight-text">Похожие рецепты</h2>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col-sm-3">
+                    <div class="card h-100 main-cat-rec margin-bottom-30">
+                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
+                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <span class="rec-cat">Healthy</span>
+                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
+                            <div class="rec-info margin-bottom-10">
+                                <span >24 мин</span>
+                                <div class="rec-info2">
+                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card h-100 main-cat-rec margin-bottom-30">
+                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
+                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <span class="rec-cat">Healthy</span>
+                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
+                            <div class="rec-info margin-bottom-10">
+                                <span >24 мин</span>
+                                <div class="rec-info2">
+                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card h-100 main-cat-rec margin-bottom-30">
+                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
+                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <span class="rec-cat">Healthy</span>
+                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
+                            <div class="rec-info margin-bottom-10">
+                                <span >24 мин</span>
+                                <div class="rec-info2">
+                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card h-100 main-cat-rec margin-bottom-30">
+                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
+                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <span class="rec-cat">Healthy</span>
+                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
+                            <div class="rec-info margin-bottom-10">
+                                <span >24 мин</span>
+                                <div class="rec-info2">
+                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
