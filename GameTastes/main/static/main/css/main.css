@@ -580,3 +580,48 @@
 .div-search{
     margin-right: 60px;
 }
+
+.div-about-1{
+    display: flex;
+    margin: 20px 0;
+}
+
+.div-history{
+    width: 50%;
+    margin-right: 20px;
+}
+
+.div-img{
+    width: 50%;
+}
+
+.img-about{
+
+}
+
+.div-about-2{
+    display: flex;
+    margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-about-3{
+
+    display: flex;
+    margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-about-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+
+
+

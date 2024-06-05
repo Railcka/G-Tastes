@@ -10,29 +10,46 @@
 
 {% block content %}
 
-<div class="section-account-div container">
-    <section class="section-account margin-top-20 margin-bottom-30">
-
-        <div class="div-left">
-                <a href="{% url 'account' %}"><h3 class="color-white">Профиль</h3></a>
-                <a href=""><h3 class="color-white">Избранное</h3></a>
+<div class="container">
+    <div class="div-about-1">
+        <div class="div-history">
+            <h2 class="color-black">История Компании</h2>
+            <p class="color-black text-g3">
+                Наша история началась с любви к видеоиграм и кулинарии. Вдохновленные магией игровых миров, мы решили объединить эти две страсти и создать компанию, которая предлагает уникальные рецепты, вдохновленные любимыми персонажами, локациями и атмосферой игр. Наш первый рецепт был создан с любовью и принятием геймерского сообщества, и с тех пор мы продолжаем расширять наш ассортимент и вдохновлять новых игроков в мире кулинарии.
+            </p>
         </div>
+        <div class="div-img">
+            <img class="img-about" src="{% static 'main/img/Rectangle2.png' %}">
+        </div>
+    </div>
+    <hr>
 
-        <div class="div-right padding-10">
-            <h2 class="color-text">Профиль</h2>
-            <div class="div-right-info">
-                 <div>
-                     <h3 class="account-text-title color-text">Имя</h3>
-                     <span class="account-text-info">Rail</span>
-                 </div>
-                 <div>
-                     <h3 class="account-text-title color-text">E-mail</h3>
-                     <span class="account-text-info">rail@mail.ru</span>
-                 </div>
+    <div class="div-about-2">
+        <h2 class="color-black">Наша команда</h2>
+        <p class="color-black text-g3">
+            Наша команда состоит из страстных геймеров и опытных поваров, которые разделяют общую страсть к играм и кулинарии. Каждый член нашей команды внимателен к деталям и стремится к созданию не только вкусных, но и уникальных блюд, воплощающих дух любимых игровых миров.
+
+        </p>
+        <br>
+        <p class="color-black text-g3">
+            Мы отличаемся своим уникальным подходом к созданию рецептов из видеоигр. Наша команда тщательно изучает игровые миры, ищет вдохновение в их характерах, сюжетах и атмосфере, чтобы перенести этот опыт в мир кулинарии. Мы используем высококачественные ингредиенты и творческий подход для того, чтобы каждый наш рецепт был особенным и неповторимым.
+        </p>
+    </div>
+    <hr>
+
+    <div class="div-about-3">
+        <h2 class="color-black">Контактная информация</h2>
+        <div class="div-about-info">
+            <div class="about-info">
+                <h3 class="color-black">Телефон</h3>
+                <h3 class="color-black">+89234567890</h3>
+            </div>
+            <div class="about-info">
+                <h3 class="color-black">Электронная почта</h3>
+                <h3 class="color-black">info@gametastes.com</h3>
             </div>
         </div>
-
-    </section>
+    </div>
 </div>
 
 {% endblock %}
