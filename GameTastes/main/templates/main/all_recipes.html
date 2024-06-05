@@ -15,7 +15,32 @@
 <section class="feature-section section-padding">
     <div class="container">
         <h3 class="cat-head">Каталог</h3>
-        <br>
+
+        <section class="section-search">
+            <div class="drop-down">
+                <button class="drop-btn">Фильтр ▼</button>
+                <div class="drop-down-content">
+                    <form method="get" >
+                        <option value="petersburg">Все</option>
+                        <option value="petersburg">Санкт-Петербург</option>
+                        <option value="samara">Самара</option>
+                        <option value="perm">Пермь</option>
+                        <option value="novosibirsk">Новосибирск</option>
+
+                        <button type="submit" class="btn btn-filter">Найти</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="div-search">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+                <form class="form-search" action="">
+                    <input class="input-search" placeholder="Искать...">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+        </section>
+
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col-sm-3">
                 <div class="card h-100 main-cat-rec margin-bottom-30">

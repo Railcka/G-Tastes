@@ -18,5 +18,5 @@ def recipe(request):
 
 # @login_required(None, 'next', '/users/login')
 def account(request):
-    return render(request, 'main/favourites.html', {'title': 'Личный кабинет'})
+    return render(request, 'main/about.html', {'title': 'Личный кабинет'})
 
