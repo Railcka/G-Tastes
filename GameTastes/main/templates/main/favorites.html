@@ -1,0 +1,43 @@
+{% extends 'main/base_layout.html' %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/account.css' %}">
+    <meta name="description" content="Личный кабинет">
+{% endblock %}
+
+{% block content %}
+
+<div class="section-account-div container">
+    <section class="section-account margin-top-20 margin-bottom-30">
+
+        <div class="div-left">
+                <a href="{% url 'account' %}"><h3 class="color-white">Профиль</h3></a>
+                <a href="{% url 'favorites' %}"><h3 class="color-white">Избранное</h3></a>
+        </div>
+
+        <div class="div-right padding-10">
+            <h2 class="color-text">Избранные рецепты</h2>
+            <hr>
+            <br>
+            <div class="div-right-fav">
+                {% for recipes in recipesUser %}
+                <a href="{% url 'recipe' recipes.idRecipe.id %}">
+                <div class="div-fav">
+                     <img class="img-fav" src="{{ recipes.idRecipe.image.url }}" alt="">
+                     <div class="div-fav-text">
+                        <h3 class="color-text">{{ recipes.idRecipe.name }}</h3>
+                         <h3 class="color-text">{{ recipes.idRecipe.description }}</h3>
+                     </div>
+                 </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+</div>
+
+{% endblock %}

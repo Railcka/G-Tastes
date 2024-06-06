@@ -15,7 +15,7 @@
 
         <div class="div-left">
                 <a href="{% url 'account' %}"><h3 class="color-white">Профиль</h3></a>
-                <a href=""><h3 class="color-white">Избранное</h3></a>
+                <a href="{% url 'favorites' %}"><h3 class="color-white">Избранное</h3></a>
         </div>
 
         <div class="div-right padding-10">
@@ -23,11 +23,11 @@
             <div class="div-right-info">
                  <div>
                      <h3 class="account-text-title color-text">Имя</h3>
-                     <span class="account-text-info">Rail</span>
+                     <span class="account-text-info">{{ user.username }}</span>
                  </div>
                  <div>
                      <h3 class="account-text-title color-text">E-mail</h3>
-                     <span class="account-text-info">rail@mail.ru</span>
+                     <span class="account-text-info">{{ user.email }}</span>
                  </div>
             </div>
         </div>

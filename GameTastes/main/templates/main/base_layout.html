@@ -57,24 +57,25 @@
 												<li><a href="{% url 'home' %}">Главная</a></li>
 
 												<li><a href="{% url 'all_recipes' %}">Рецепты</a></li>
+										
 
-												<li><a href="{% url 'account' %}">Контакты</a></li>
-
-												<li class=""><a href="#">О нас</a></li>
+												<li class=""><a href="{% url 'about' %}">О нас</a></li>
 
 											<li class="dropdown active">
-<!--													<a class="btn btn-primary"></a>-->
-<!--													<div class="submenu-wrapper">-->
-<!--														<div class="submenu-inner">-->
-<!--															<ul class="dropdown-menu">-->
-<!--																<li><a href="{% url 'account' %}">Профиль</a></li>-->
-<!--																<li><a href="#">Выход</a></li>-->
-<!--															</ul>-->
-<!--														</div>-->
-<!--													</div>-->
 
-													<a class="color-yellow" href="{% url 'login' %}">Вход →</a>
-
+													{% if request.user.is_authenticated %}
+													<a class="btn btn-primary">{{ user.username }}</a>
+													<div class="submenu-wrapper">
+														<div class="submenu-inner">
+															<ul class="dropdown-menu">
+																<li><a href="{% url 'account' %}">Профиль</a></li>
+																<li><a href="#">Выход</a></li>
+															</ul>
+														</div>
+													</div>
+													{% else %}
+														<a class="color-yellow" href="{% url 'login' %}">Вход →</a>
+													{% endif %}
 											</li>
 
 									</ul>

@@ -10,17 +10,20 @@
 {% endblock head %}
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'main/multiselect/src/jquery.multi-select.js' %}"></script>
+
 {% block content %}
 
 <section class="feature-section section-padding">
     <div class="container">
         <div class="single-recipe-detail">
             <div class="single-recipe-heading">
-                <h2 class="text-black">Жаркое из ягненка с картофелем и горошком</h2>
+                <h2 class="text-black">{{ recipe.name }}</h2>
             </div>
             <div class="recipe-detail">
                 <div class="recipe-detail-images">
-                    <img class="recipe-detail-img" src="{% static 'main/img/image17.jpeg' %}">
+                    <img class="recipe-detail-img" src="{{ recipe.image.url }}">
                     <div class="rating-stars">
                         <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
                         <img class="recipe-detail-star" src="{% static 'main/img/image15.png' %}">
@@ -32,10 +35,10 @@
 
                 <div class="recipe-specs">
                     <div class="recipe-specs-box">
-                        <h3 class="color-black specs-detail">Read Dead Redemption 2</h3>
+                        <h3 class="color-black specs-detail">{{ recipe.idGame.name }}</h3>
                     </div>
                     <div class="recipe-specs-box">
-                        <h3 class="color-black specs-detail">Салун «Смитфилдс» в Валентайне</h3>
+                        <h3 class="color-black specs-detail">{{ recipe.nameInGame }}</h3>
                     </div>
                 </div>
             </div>
@@ -46,40 +49,40 @@
                 <div class="recipe-times">
                     <div class="recipe-time">
                         <span class="color-black">Будет готово через</span>
-                        <span class="color-text">5 часов 15 минут</span>
+                        <span class="color-text">{{ recipe.cookingFullTime }} минут</span>
                     </div>
                     <hr>
                     <div class="recipe-time">
                         <span class="color-black">Время на кухне</span>
-                        <span class="color-text">1 час 30 минут</span>
+                        <span class="color-text">{{ recipe.cookingTime }} минут</span>
                     </div>
                 </div>
                 <div class="recipe-bzu">
                     <div class="recipe-bzu-detail">
                         <h3 class="color-black specs-detail">Калории</h3>
                         <div class="specs-detail-text">
-                            <span class="color-white detail-text">183</span>
+                            <span class="color-white detail-text">{{ recipe.calories }}</span>
                             <span class="color-white detail-text">кКал</span>
                         </div>
                     </div>
                     <div class="recipe-bzu-detail">
                         <h3 class="color-black specs-detail">Белки</h3>
                         <div class="specs-detail-text">
-                            <span class="color-white detail-text">21</span>
+                            <span class="color-white detail-text">{{ recipe.squirrels }}</span>
                             <span class="color-white detail-text">г</span>
                         </div>
                     </div>
                     <div class="recipe-bzu-detail">
                         <h3 class="color-black specs-detail">Жиры</h3>
                         <div class="specs-detail-text">
-                            <span class="color-white detail-text">13</span>
+                            <span class="color-white detail-text">{{ recipe.fats }}</span>
                             <span class="color-white detail-text">г</span>
                         </div>
                     </div>
                     <div class="recipe-bzu-detail">
                         <h3 class="color-black specs-detail">Углеводы</h3>
                         <div class="specs-detail-text">
-                            <span class="color-white detail-text">18</span>
+                            <span class="color-white detail-text">{{ recipe.carbohydrates }}</span>
                             <span class="color-white detail-text">г</span>
                         </div>
                     </div>
@@ -91,139 +94,98 @@
         <div class="div-ingredients">
             <h2 class="color-text weight-text">Ингредиенты</h2>
             <div class="div-ingr">
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
-                <div class="ingr">
-                    <h3 class="ingr-text color-text">Лопатка ягненка<span>220 г</span></h3>
-                </div>
+                {% for ing in ingridients %}
+                    <div class="ingr">
+                        <h3 class="ingr-text color-text"><img class="" style="height:40px;width:40px;" src="{{ ing.idIngredient.image.url }}">{{ ing.idIngredient.name }}<span>{% if ing.amount != 0 %}{{ ing.amount }}{% endif %} {{ ing.idUnit.name }} </span></h3>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 
         <div class="div-steps-recipe">
             <h2 class="color-text weight-text">Пошаговый рецепт</h2>
             <hr>
-            <div class="div-step">
-                <p class="step-text color-black">1. Очистите мясо ягненка от жилок и лишнего жира, обмажьте специей чимичурри, солью и перцем, дайте постоять 2,5 часа.</p>
-                <img class="step-img" src="{% static 'main/img/image17.jpeg' %}">
-            </div>
-            <hr>
-            <div class="div-step">
-                <p class="step-text color-black">2. Быстро обжарьте мясо до золотистой корочки с каждой стороны. Положите в кастрюлю, полностью залейте маслом и поставьте в духовку, разогретую до 120 градусов, на 2 часа — так оно получится мягким и сочным.</p>
-                <img class="step-img" src="{% static 'main/img/image17.jpeg' %}">
-            </div>
-            <hr>
-            <div class="div-step">
-                <p class="step-text color-black">3. Картофель положите в фольгу, добавьте растительное масло, соль, перец и мелко порубленный чеснок. Заверните и поставьте в разогретую до 180 градусов духовку на 45 минут.</p>
-                <img class="step-img" src="{% static 'main/img/image17.jpeg' %}">
-            </div>
+            {% for inst in instructions %}
+                <div class="div-step">
+                    <p class="step-text color-black">{{ inst.step }}. {{ inst.description }}</p>
+                    {% if '/media/images/4054617' in  inst.image.url %}
+
+                    {% else %}
+                    <img class="step-img" src="{{ inst.image.url }}">
+                    {% endif %}
+                </div>
+                <hr>
+            {% endfor %}
+
         </div>
 
         <hr>
         <div class="div-star-fav">
             <div class="your-star">
-                <h3 class="color-text star-text">Ваша оценка:
-                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
-                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
-                    <img class="star-fav" src="{% static 'main/img/image15.png' %}" alt="">
-                </h3>
+                <form method="post" action="/gradesAdd/{{ id }}">
+                    {% csrf_token %}
+                    <h3 class="color-text star-text">Ваша оценка:
+                        {% if userGrade == 5 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                        {% endif %}
+                        {% if userGrade == 4 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                        {% endif %}
+                        {% if userGrade == 3 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                        {% endif %}
+                        {% if userGrade == 2 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                        {% endif %}
+                        {% if userGrade == 1 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/image15.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                        {% endif %}
+                        {% if userGrade == 0 %}
+                            <button class="" name="star"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star2"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star3"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star4"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                            <button class="" name="star5"><img class="star-fav" src="{% static 'main/img/New_Bullet_SilverStar.svg.png' %}" alt=""></button>
+                        {% endif %}
+                    </h3>
+                    </form>
             </div>
             <div class="your-fav">
-                <h3 class="color-text fav-text">Избранное</h3>
-                <img class="fav-heart" src="{% static 'main/img/heart.png' %}">
+                    <h3 class="color-text fav-text">Избранное</h3>
+                    <form method="post" action="/favoriteAdd/{{ id }}">
+                        {% csrf_token %}
+                        {% if favorite == 0 %}
+                        <button class="" name="favoriteOn"><img class="fav-heart" src="{% static 'main/img/heart.png' %}"></button>
+                        {% endif %}
+                        {% if favorite == 1 %}
+                        <button class="" name="favoriteOff"><img class="fav-heart" style="height:20px;width:19px;" src="{% static 'main/img/Heart_corazón.svg2.png' %}"></button>
+                        {% endif %}
+                    </form>
             </div>
         </div>
         <hr>
 
-        <div>
-            <h2 class="color-text weight-text">Похожие рецепты</h2>
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-sm-3">
-                    <div class="card h-100 main-cat-rec margin-bottom-30">
-                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
-                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <span class="rec-cat">Healthy</span>
-                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
-                            <div class="rec-info margin-bottom-10">
-                                <span >24 мин</span>
-                                <div class="rec-info2">
-                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
-                                    <span>4.8</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card h-100 main-cat-rec margin-bottom-30">
-                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
-                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <span class="rec-cat">Healthy</span>
-                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
-                            <div class="rec-info margin-bottom-10">
-                                <span >24 мин</span>
-                                <div class="rec-info2">
-                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
-                                    <span>4.8</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card h-100 main-cat-rec margin-bottom-30">
-                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
-                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <span class="rec-cat">Healthy</span>
-                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
-                            <div class="rec-info margin-bottom-10">
-                                <span >24 мин</span>
-                                <div class="rec-info2">
-                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
-                                    <span>4.8</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card h-100 main-cat-rec margin-bottom-30">
-                        <img class="rec-heart" src="{% static 'main/img/heart.png' %}">
-                        <img src="{% static 'main/img/image10.png' %}" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <span class="rec-cat">Healthy</span>
-                            <h5 class="card-title card-title-text ">«Картофельные оладьи «Волчьи лапки»</h5>
-                            <div class="rec-info margin-bottom-10">
-                                <span >24 мин</span>
-                                <div class="rec-info2">
-                                    <img class="rec-star" src="{% static 'main/img/image15.png' %}">
-                                    <span>4.8</span>
-                                </div>
-                            </div>
-                            <a class="btn btn-rec margin-bottom-10" href="{% url 'recipe' %}">Рецепт</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 {% endblock content %}
